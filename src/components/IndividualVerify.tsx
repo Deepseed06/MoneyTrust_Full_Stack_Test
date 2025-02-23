@@ -50,13 +50,13 @@ const confirmPassword = useAuthRegistrationStore(state => state.confirmPassword)
         handleNext()
     }
     const handleNext = () => {
-        if (currentStep < steps?.length) {
-          setCurrentStep((prev:number) => prev + 1)
+        if ((currentStep ?? 0) < (steps?.length ?? 0) && setCurrentStep) {
+          setCurrentStep((currentStep ?? 0) + 1)
         }
       }
     const handlePrevious = () => {
-        if (currentStep < steps?.length) {
-          setCurrentStep((prev:number) => prev - 1)
+        if ((currentStep ?? 0) < (steps?.length ?? 0) && setCurrentStep) {
+          setCurrentStep((currentStep ?? 0) - 1)
         }
       }
     

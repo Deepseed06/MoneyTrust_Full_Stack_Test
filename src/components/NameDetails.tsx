@@ -32,7 +32,7 @@ const individualPersonalSchema = individualRegistrationSchema.pick({
 
 type individualPersonalSchema = z.infer<typeof individualPersonalSchema>;
 
-const NameDetails = ({currentStep,setCurrentStep, steps}:FormProgressProps) => {
+const NameDetails = ({currentStep = 0, setCurrentStep, steps}:FormProgressProps) => {
   const [list, setList] = useState<any>([]);
   let toastProperties = null;
 
@@ -72,8 +72,8 @@ const NameDetails = ({currentStep,setCurrentStep, steps}:FormProgressProps) => {
         handleNext()
     }
     const handleNext = () => {
-        if (currentStep < steps?.length) {
-          setCurrentStep((prev:number) => prev + 1)
+        if (currentStep < (steps?.length ?? 0)) {
+          setCurrentStep && setCurrentStep(currentStep + 1)
         }
       }
 

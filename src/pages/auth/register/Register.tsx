@@ -60,7 +60,7 @@ export default function Register() {
               className="h-full bg-[#D71E0E] rounded-full transition-all duration-300 ease-in-out"
               style={{ width: `${((currentStep - 1) / (steps.length - 1)) * 100}%` }}
             ></div>
-            {steps.map((step, index) => (
+            {steps.map((_step, index) => (
                 <div
                 key={index}
                 className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2

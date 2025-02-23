@@ -54,8 +54,8 @@ const setData = useAuthRegistrationStore(state => state.setData);
         // navigate("/password")
     }
     const handleNext = () => {
-        if (currentStep < steps.length) {
-          setCurrentStep((prev:number) => prev + 1)
+        if (currentStep !== undefined && steps && currentStep < steps.length) {
+          setCurrentStep && setCurrentStep(currentStep + 1)
         }
       }
     
